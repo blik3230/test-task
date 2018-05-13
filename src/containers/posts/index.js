@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Modal, Table } from 'react-materialize';
+import moment from 'moment';
 
 import {
     fetchPosts,
@@ -51,7 +52,7 @@ class Posts extends Component {
                             (<p>without url</p>)
                     }
                 </td>
-                <td>{post.created_at}</td>
+                <td>{moment(post.created_at).format('lll')}</td>
                 <td>{post.author}</td>
             </tr>
         )
